@@ -6,7 +6,7 @@ import sys
 output_file = './output.txt'
 script_name = os.path.basename(sys.argv[0])
 excluded_files = [output_file, script_name]
-excluded_dirs = ['minio-data', 'clickhouse-data', 'logs']  # Добавляем папку для исключения
+excluded_dirs = ['minio-data', 'test_data']  # Добавляем папку для исключения
 root_dir = os.getcwd()
 
 with open(output_file, 'w', encoding='utf-8') as f:

@@ -1,0 +1,23 @@
+INSERT INTO events.company_indicators_typed (period, inn, indicator_name, string_value, numeric_value, bool_value, date_value)
+VALUES
+(NULL, '771234567890', 'Наименование организации', 'ООО "Ромашка"', NULL, NULL, NULL),
+(NULL, '771234567890', 'Наименование организации', 'АО "Лютик"', NULL, NULL, NULL),
+(NULL, '771234567890', 'Наименование организации', 'ЗАО "Василек"', NULL, NULL, NULL),
+(NULL, '771234567890', 'НДФЛ, тыс.руб.', NULL, 150, NULL, NULL),
+(NULL, '771234567890', 'НДФЛ, тыс.руб.', NULL, 200, NULL, NULL),
+(NULL, '771234567890', 'НДФЛ, тыс.руб.', NULL, 180, NULL, NULL),
+(NULL, '771234567890', 'Статус МСП', NULL, NULL, NULL, '2020-03-15'),
+(NULL, '771234567890', 'Статус МСП', NULL, NULL, NULL, '2019-08-20'),
+(NULL, '771234567890', 'Статус МСП', NULL, NULL, NULL, '2021-11-10'),
+(NULL, '771234567890', 'Дата регистрации', 'info@romashka.ru', NULL, NULL, NULL),
+(NULL, '771234567890', 'Дата регистрации', 'info@lyutik.ru', NULL, NULL, NULL),
+(NULL, '771234567890', 'Дата регистрации', 'contact@vasilek.ru', NULL, NULL, NULL),
+(NULL, '771234567891', 'Код ТН ВЭД ЕАЭС', NULL, 1200000, NULL, NULL),
+(NULL, '771234567891', 'Код ТН ВЭД ЕАЭС', NULL, 1800000, NULL, NULL),
+(NULL, '771234567891', 'Код ТН ВЭД ЕАЭС', NULL, 950000, NULL, NULL),
+(2023, '771234567891', 'НДФЛ, тыс.руб.', NULL, 450000, NULL, NULL),
+(2023, '771234567891', 'НДФЛ, тыс.руб.', NULL, 600000, NULL, NULL),
+(2023, '771234567891', 'НДФЛ, тыс.руб.', NULL, 350000, NULL, NULL),
+(NULL, '771234567891', 'Прочие налоги', NULL, 3000000, NULL, NULL),
+(NULL, '771234567891', 'Прочие налоги', NULL, 4500000, NULL, NULL),
+(NULL, '771234567891', 'Прочие налоги', NULL, 2500000, NULL, NULL);
