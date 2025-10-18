@@ -1,0 +1,178 @@
+data_type,period,inn,indicator_name,indicator_value,source,update_date
+company_info,,771234567890,short_name,"ООО \"Ромашка\"",spark,2024-01-15
+company_info,,771234567890,full_name,"Общество с ограниченной ответственностью \"Ромашка\"",spark,2024-01-15
+company_info,,771234567890,spark_status,Активна,spark,2024-01-15
+company_info,,771234567890,internal_status,В работе,manual,2024-01-15
+company_info,,771234567890,total_status,Утвержден,manual,2024-01-15
+company_info,,771234567890,registry_date,2020-05-15,manual,2024-01-15
+company_info,,771234567890,legal_address,"г. Москва, ул. Тверская, д. 1",spark,2024-01-15
+company_info,,771234567890,production_address,"г. Москва, ул. Промышленная, д. 15",manual,2024-01-15
+company_info,,771234567890,additional_site_address,"г. Москва, ул. Складская, д. 25",manual,2024-01-15
+company_info,,771234567890,main_industry,Пищевая промышленность,manual,2024-01-15
+company_info,,771234567890,main_subindustry,Молочная продукция,manual,2024-01-15
+company_info,,771234567890,additional_industry,Логистика,manual,2024-01-15
+company_info,,771234567890,additional_subindustry,Складская логистика,manual,2024-01-15
+company_info,,771234567890,industry_presentations,"Презентация молочной продукции 2023",manual,2024-01-15
+company_info,,771234567890,main_okved,10.51,spark,2024-01-15
+company_info,,771234567890,main_okved_description,"Производство молочной продукции",spark,2024-01-15
+company_info,,771234567890,production_okved,10.51.1,spark,2024-01-15
+company_info,,771234567890,production_okved_description,"Производство питьевого молока",spark,2024-01-15
+company_info,,771234567890,general_info,"Крупный производитель молочной продукции в ЦФО",manual,2024-01-15
+company_info,,771234567890,registration_date,2015-03-20,egrul,2024-01-15
+company_info,,771234567890,head,"Иванов Иван Иванович",spark,2024-01-15
+company_info,,771234567890,parent_organization,"АО \"Холдинг Молочные продукты\"",spark,2024-01-15
+company_info,,771234567890,parent_inn,770123456789,spark,2024-01-15
+company_info,,771234567890,parent_relation_type,Дочернее общество,spark,2024-01-15
+contacts,,771234567890,management_contacts,"+7 (999) 123-45-67",manual,2024-01-15
+contacts,,771234567890,management_email,ceo@company.ru,manual,2024-01-15
+contacts,,771234567890,employee_contact,"Петров Петр Петрович",manual,2024-01-15
+contacts,,771234567890,phone,"+7 (495) 123-45-67",manual,2024-01-15
+contacts,,771234567890,emergency_contact,"+7 (999) 765-43-21",manual,2024-01-15
+contacts,,771234567890,website,www.company.ru,manual,2024-01-15
+contacts,,771234567890,email,info@company.ru,manual,2024-01-15
+status,,771234567890,support_measures,"Субсидия на развитие производства",manual,2024-01-15
+status,,771234567890,special_status,Резидент ОЭЗ,manual,2024-01-15
+status,,771234567890,site_total,Основная площадка,manual,2024-01-15
+status,,771234567890,msk_support_received,true,manual,2024-01-15
+status,,771234567890,systemic_enterprise,true,manual,2024-01-15
+status,,771234567890,msp_status,Среднее предприятие,manual,2024-01-15
+status,,771234567890,is_the_same,false,manual,2024-01-15
+financial,2023,771234567890,revenue,150000000,spark,2024-01-15
+financial,2022,771234567890,revenue,120000000,spark,2024-01-15
+financial,2021,771234567890,revenue,100000000,spark,2024-01-15
+financial,2020,771234567890,revenue,90000000,spark,2024-01-15
+financial,2019,771234567890,revenue,80000000,spark,2024-01-15
+financial,2018,771234567890,revenue,70000000,spark,2024-01-15
+financial,2017,771234567890,revenue,60000000,spark,2024-01-15
+financial,2023,771234567890,net_profit,15000000,spark,2024-01-15
+financial,2022,771234567890,net_profit,12000000,spark,2024-01-15
+financial,2021,771234567890,net_profit,10000000,spark,2024-01-15
+financial,2020,771234567890,net_profit,9000000,spark,2024-01-15
+financial,2019,771234567890,net_profit,8000000,spark,2024-01-15
+financial,2018,771234567890,net_profit,7000000,spark,2024-01-15
+financial,2017,771234567890,net_profit,6000000,spark,2024-01-15
+financial,2023,771234567890,employee_count_total,240,spark,2024-01-15
+financial,2022,771234567890,employee_count_total,230,spark,2024-01-15
+financial,2021,771234567890,employee_count_total,220,spark,2024-01-15
+financial,2020,771234567890,employee_count_total,210,spark,2024-01-15
+financial,2019,771234567890,employee_count_total,200,spark,2024-01-15
+financial,2018,771234567890,employee_count_total,190,spark,2024-01-15
+financial,2017,771234567890,employee_count_total,180,spark,2024-01-15
+financial,2023,771234567890,employee_count_moscow,210,spark,2024-01-15
+financial,2022,771234567890,employee_count_moscow,200,spark,2024-01-15
+financial,2021,771234567890,employee_count_moscow,190,spark,2024-01-15
+financial,2020,771234567890,employee_count_moscow,180,spark,2024-01-15
+financial,2019,771234567890,employee_count_moscow,170,spark,2024-01-15
+financial,2018,771234567890,employee_count_moscow,160,spark,2024-01-15
+financial,2017,771234567890,employee_count_moscow,150,spark,2024-01-15
+financial,2023,771234567890,payroll_total,120000000,spark,2024-01-15
+financial,2022,771234567890,payroll_total,115000000,spark,2024-01-15
+financial,2021,771234567890,payroll_total,110000000,spark,2024-01-15
+financial,2020,771234567890,payroll_total,105000000,spark,2024-01-15
+financial,2019,771234567890,payroll_total,100000000,spark,2024-01-15
+financial,2018,771234567890,payroll_total,95000000,spark,2024-01-15
+financial,2017,771234567890,payroll_total,90000000,spark,2024-01-15
+financial,2023,771234567890,payroll_moscow,105000000,spark,2024-01-15
+financial,2022,771234567890,payroll_moscow,100000000,spark,2024-01-15
+financial,2021,771234567890,payroll_moscow,95000000,spark,2024-01-15
+financial,2020,771234567890,payroll_moscow,90000000,spark,2024-01-15
+financial,2019,771234567890,payroll_moscow,85000000,spark,2024-01-15
+financial,2018,771234567890,payroll_moscow,80000000,spark,2024-01-15
+financial,2017,771234567890,payroll_moscow,75000000,spark,2024-01-15
+taxes,2023,771234567890,taxes_msk_total,8000000,tax_service,2024-01-15
+taxes,2022,771234567890,taxes_msk_total,7500000,tax_service,2024-01-15
+taxes,2021,771234567890,taxes_msk_total,7000000,tax_service,2024-01-15
+taxes,2020,771234567890,taxes_msk_total,6500000,tax_service,2024-01-15
+taxes,2019,771234567890,taxes_msk_total,6000000,tax_service,2024-01-15
+taxes,2018,771234567890,taxes_msk_total,5500000,tax_service,2024-01-15
+taxes,2017,771234567890,taxes_msk_total,5000000,tax_service,2024-01-15
+taxes,2023,771234567890,profit_tax,1600000,tax_service,2024-01-15
+taxes,2022,771234567890,profit_tax,1500000,tax_service,2024-01-15
+taxes,2021,771234567890,profit_tax,1400000,tax_service,2024-01-15
+taxes,2020,771234567890,profit_tax,1300000,tax_service,2024-01-15
+taxes,2019,771234567890,profit_tax,1200000,tax_service,2024-01-15
+taxes,2018,771234567890,profit_tax,1100000,tax_service,2024-01-15
+taxes,2017,771234567890,profit_tax,1000000,tax_service,2024-01-15
+taxes,2023,771234567890,property_tax,800000,tax_service,2024-01-15
+taxes,2022,771234567890,property_tax,750000,tax_service,2024-01-15
+taxes,2021,771234567890,property_tax,700000,tax_service,2024-01-15
+taxes,2020,771234567890,property_tax,650000,tax_service,2024-01-15
+taxes,2019,771234567890,property_tax,600000,tax_service,2024-01-15
+taxes,2018,771234567890,property_tax,550000,tax_service,2024-01-15
+taxes,2017,771234567890,property_tax,500000,tax_service,2024-01-15
+taxes,2023,771234567890,land_tax,420000,tax_service,2024-01-15
+taxes,2022,771234567890,land_tax,400000,tax_service,2024-01-15
+taxes,2021,771234567890,land_tax,380000,tax_service,2024-01-15
+taxes,2020,771234567890,land_tax,360000,tax_service,2024-01-15
+taxes,2019,771234567890,land_tax,340000,tax_service,2024-01-15
+taxes,2018,771234567890,land_tax,320000,tax_service,2024-01-15
+taxes,2017,771234567890,land_tax,300000,tax_service,2024-01-15
+taxes,2023,771234567890,personal_income_tax,3200000,tax_service,2024-01-15
+taxes,2022,771234567890,personal_income_tax,3000000,tax_service,2024-01-15
+taxes,2021,771234567890,personal_income_tax,2800000,tax_service,2024-01-15
+taxes,2020,771234567890,personal_income_tax,2600000,tax_service,2024-01-15
+taxes,2019,771234567890,personal_income_tax,2400000,tax_service,2024-01-15
+taxes,2018,771234567890,personal_income_tax,2200000,tax_service,2024-01-15
+taxes,2017,771234567890,personal_income_tax,2000000,tax_service,2024-01-15
+taxes,2023,771234567890,transport_tax,80000,tax_service,2024-01-15
+taxes,2022,771234567890,transport_tax,75000,tax_service,2024-01-15
+taxes,2021,771234567890,transport_tax,70000,tax_service,2024-01-15
+taxes,2020,771234567890,transport_tax,65000,tax_service,2024-01-15
+taxes,2019,771234567890,transport_tax,60000,tax_service,2024-01-15
+taxes,2018,771234567890,transport_tax,55000,tax_service,2024-01-15
+taxes,2017,771234567890,transport_tax,50000,tax_service,2024-01-15
+taxes,2023,771234567890,other_taxes,210000,tax_service,2024-01-15
+taxes,2022,771234567890,other_taxes,200000,tax_service,2024-01-15
+taxes,2021,771234567890,other_taxes,190000,tax_service,2024-01-15
+taxes,2020,771234567890,other_taxes,180000,tax_service,2024-01-15
+taxes,2019,771234567890,other_taxes,170000,tax_service,2024-01-15
+taxes,2018,771234567890,other_taxes,160000,tax_service,2024-01-15
+taxes,2017,771234567890,other_taxes,150000,tax_service,2024-01-15
+taxes,2023,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2022,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2021,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2020,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2019,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2018,771234567890,excise_tax,0,tax_service,2024-01-15
+taxes,2017,771234567890,excise_tax,0,tax_service,2024-01-15
+investments,2023,771234567890,investments_msk,7000000,manual,2024-01-15
+investments,2022,771234567890,investments_msk,6000000,manual,2024-01-15
+investments,2021,771234567890,investments_msk,5000000,manual,2024-01-15
+export,2023,771234567890,export_volume,18000000,manual,2024-01-15
+export,2022,771234567890,export_volume,16000000,manual,2024-01-15
+export,2021,771234567890,export_volume,14000000,manual,2024-01-15
+export,2020,771234567890,export_volume,12000000,manual,2024-01-15
+export,2019,771234567890,export_volume,10000000,manual,2024-01-15
+property,,771234567890,land_cad_number,77:1234567890,manual,2024-01-15
+property,,771234567890,land_area,2500,manual,2024-01-15
+property,,771234567890,land_use_type,Производственная деятельность,manual,2024-01-15
+property,,771234567890,land_ownership_type,Собственность,manual,2024-01-15
+property,,771234567890,land_owner,"ООО \"Ромашка\"",manual,2024-01-15
+property,,771234567890,building_cad_number,77:1234567891,manual,2024-01-15
+property,,771234567890,building_area,1500,manual,2024-01-15
+property,,771234567890,building_use_type,Производственное здание,manual,2024-01-15
+property,,771234567890,building_type,Производственный цех,manual,2024-01-15
+property,,771234567890,building_ownership_type,Собственность,manual,2024-01-15
+property,,771234567890,building_owner,"ООО \"Ромашка\"",manual,2024-01-15
+property,,771234567890,production_area,1200,manual,2024-01-15
+products,,771234567890,produced_products,"Молоко, кефир, йогурт",manual,2024-01-15
+products,,771234567890,standardized_products,"ГОСТ 31450-2012, ГОСТ 31658-2012",manual,2024-01-15
+products,,771234567890,product_names,"Молоко пастеризованное 2.5%, Кефир 1%, Йогурт фруктовый",manual,2024-01-15
+products,,771234567890,okpd2_codes,"10.51.11.110, 10.51.12.110, 10.51.14.120",manual,2024-01-15
+products,,771234567890,product_segments,"Молочная продукция премиум-сегмента",manual,2024-01-15
+products,,771234567890,product_catalog,"https://company.ru/catalog",manual,2024-01-15
+products,,771234567890,has_state_order,true,manual,2024-01-15
+products,,771234567890,production_capacity_utilization,85,manual,2024-01-15
+products,,771234567890,has_export,true,manual,2024-01-15
+products,,771234567890,export_volume_previous_year,18000000,manual,2024-01-15
+products,,771234567890,export_countries,"Казахстан, Беларусь, Армения",manual,2024-01-15
+products,,771234567890,tn_ved_code,0401,manual,2024-01-15
+geo,,771234567890,industry,"Пищевая промышленность",spark,2024-01-15
+geo,,771234567890,legal_address_coords,"55.7558, 37.6173",manual,2024-01-15
+geo,,771234567890,production_address_coords,"55.7500, 37.6200",manual,2024-01-15
+geo,,771234567890,additional_site_coords,"55.7400, 37.6300",manual,2024-01-15
+geo,,771234567890,latitude,55.7558,manual,2024-01-15
+geo,,771234567890,longitude,37.6173,manual,2024-01-15
+geo,,771234567890,district,ЦАО,manual,2024-01-15
+geo,,771234567890,area,Тверской,manual,2024-01-15
+status,,771234567890,registry_development,В плане развития,manual,2024-01-15
