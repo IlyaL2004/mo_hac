@@ -1,0 +1,11 @@
+data_type,period,inn,indicator_name,indicator_value,source,update_date
+property,,775432109876,office_area,500,manual,2024-01-15
+property,,775432109876,warehouse_area,1200,manual,2024-01-15
+property,2023-12-31,775432109876,equipment_value,7500000,spark,2024-01-15
+status,,775432109876,registration_date,2015-03-20,egrul,2024-01-15
+status,,775432109876,company_status,active,egrul,2024-01-15
+products,,775432109876,main_product,"""Промышленное оборудование""",manual,2024-01-15
+products,,775432109876,product_count,25,manual,2024-01-15
+export,2023-12-31,775432109876,export_volume,1000,manual,2024-01-15
+export,2023-12-31,775432109876,export_country,"""Германия""",manual,2024-01-15
+export,2023-12-31,775432109876,export_revenue,5000000,spark,2024-01-15

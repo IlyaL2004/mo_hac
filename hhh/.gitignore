@@ -6,4 +6,4 @@ venv/
 .env
 .venv
 minio-data/
-test_data/
+
