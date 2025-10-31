@@ -83,7 +83,20 @@ Python 3.8+
 
 WSL (для Windows пользователей)
 
+<div align="center">
 
+![Analytics Dashboard](https://github.com/user-attachments/files/23277495/capture_20251101015809880.bmp)
+*Главный дашборд с ключевыми метриками*
+
+![Data Monitoring](https://github.com/user-attachments/files/23277497/capture_20251101015822752.bmp)
+*Мониторинг данных в реальном времени*
+
+![Metrics Visualization](https://github.com/user-attachments/files/23277499/capture_20251101015843823.bmp)
+*Визуализация промышленных показателей*
+
+![Data Sources](https://github.com/user-attachments/files/23277500/capture_20251101015853338.bmp)
+*Управление источниками данных*
+</div>
 
 
 1. pip install -r requirements.txt
