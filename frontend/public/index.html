@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .status-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .status-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .status-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .status-item h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .status-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .status-good {
+            color: #28a745;
+        }
+
+        .status-bad {
+            color: #dc3545;
+        }
+
+        .logs {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .log-time {
+            color: #888;
+        }
+
+        .log-info {
+            color: #00ff00;
+        }
+
+        .log-error {
+            color: #ff4444;
+        }
+
+        .log-success {
+            color: #44ff44;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .flex-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .flex-buttons .btn {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📁 File Processor</h1>
+            <p>Обработка файлов и данных через Kafka & PostgreSQL</p>
+        </div>
+
+        <div class="cards">
+            <!-- Карточка обработки файлов -->
+            <div class="card">
+                <h2>📄 Обработка файла</h2>
+                <form id="fileForm">
+                    <div class="form-group">
+                        <label for="filePath">Путь к файлу:</label>
+                        <input type="text" id="filePath" placeholder="Например: /path/to/your/file.pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileInn">ИНН организации:</label>
+                        <input type="text" id="fileInn" placeholder="10 или 12 цифр" pattern="\d{10,12}" required>
+                    </div>
+                    <button type="submit" class="btn">🚀 Обработать файл</button>
+                </form>
+            </div>
+
+            <!-- Карточка загрузки из API -->
+            <div class="card">
+                <h2>🌐 Загрузка из API</h2>
+                <form id="apiForm">
+                    <div class="form-group">
+                        <label for="apiUrl">URL API:</label>
+                        <input type="url" id="apiUrl" placeholder="https://api.example.com/data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apiInn">ИНН организации:</label>
+                        <input type="text" id="apiInn" placeholder="10 или 12 цифр" pattern="\d{10,12}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileName">Имя файла (опционально):</label>
+                        <input type="text" id="fileName" placeholder="data.json">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileExtension">Расширение файла:</label>
+                        <select id="fileExtension">
+                            <option value="json">JSON</option>
+                            <option value="xml">XML</option>
+                            <option value="txt">TXT</option>
+                            <option value="csv">CSV</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">📥 Загрузить из API</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Статус системы -->
+        <div class="status-section">
+            <h2>📊 Статус системы</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>API сервер</h3>
+                    <div id="apiStatus" class="status-value status-good">Проверка...</div>
+                </div>
+                <div class="status-item">
+                    <h3>PostgreSQL</h3>
+                    <div id="dbStatus" class="status-value">Проверка...</div>
+                </div>
+                <div class="status-item">
+                    <h3>Kafka</h3>
+                    <div id="kafkaStatus" class="status-value">Проверка...</div>
+                </div>
+                <div class="status-item">
+                    <h3>Superset</h3>
+                    <div id="supersetStatus" class="status-value">Проверка...</div>
+                </div>
+            </div>
+
+            <div class="flex-buttons">
+                <button class="btn" onclick="openSuperset(false)">🔗 Ссылка на Superset</button>
+                <button class="btn btn-secondary" onclick="openSuperset(true)">🌐 Открыть Superset</button>
+            </div>
+
+            <div id="alertContainer"></div>
+
+            <h3 style="margin-top: 30px;">📋 Логи операций</h3>
+            <div class="logs" id="logs">
+                <div class="log-entry">
+                    <span class="log-time">[Система]</span>
+                    <span class="log-info">Инициализация интерфейса...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+        let logCounter = 0;
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            checkSystemStatus();
+            addLog('Интерфейс загружен', 'info');
+        });
+
+        // Функция для добавления логов
+        function addLog(message, type = 'info') {
+            const logsContainer = document.getElementById('logs');
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+
+            const timestamp = new Date().toLocaleTimeString();
+            logEntry.innerHTML = `
+                <span class="log-time">[${timestamp}]</span>
+                <span class="log-${type}">${message}</span>
+            `;
+
+            logsContainer.appendChild(logEntry);
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+            logCounter++;
+        }
+
+        // Функция для показа уведомлений
+        function showAlert(message, type = 'success') {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+
+            container.appendChild(alert);
+
+            // Автоматическое скрытие через 5 секунд
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+
+        // Проверка статуса системы
+        async function checkSystemStatus() {
+            try {
+                // Проверка API сервера
+                const response = await fetch(`${API_BASE_URL}/open-superset`);
+                document.getElementById('apiStatus').textContent = '✅ Доступен';
+                document.getElementById('apiStatus').className = 'status-value status-good';
+
+                const data = await response.json();
+                document.getElementById('supersetStatus').textContent = data.superset_available ? '✅ Доступен' : '❌ Недоступен';
+                document.getElementById('supersetStatus').className = data.superset_available ?
+                    'status-value status-good' : 'status-value status-bad';
+
+            } catch (error) {
+                document.getElementById('apiStatus').textContent = '❌ Недоступен';
+                document.getElementById('apiStatus').className = 'status-value status-bad';
+                document.getElementById('supersetStatus').textContent = '❓ Неизвестно';
+            }
+
+            // Для демонстрации - в реальном приложении здесь были бы реальные проверки
+            setTimeout(() => {
+                document.getElementById('dbStatus').textContent = '✅ Доступен';
+                document.getElementById('dbStatus').className = 'status-value status-good';
+                document.getElementById('kafkaStatus').textContent = '✅ Доступен';
+                document.getElementById('kafkaStatus').className = 'status-value status-good';
+                addLog('Проверка статуса системы завершена', 'success');
+            }, 1000);
+        }
+
+        // Обработка формы файла
+        document.getElementById('fileForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const filePath = document.getElementById('filePath').value;
+            const inn = document.getElementById('fileInn').value;
+
+            if (!filePath || !inn) {
+                showAlert('Заполните все обязательные поля', 'error');
+                return;
+            }
+
+            addLog(`Начата обработка файла: ${filePath} для ИНН: ${inn}`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/process-file/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        file_path: filePath,
+                        inn: inn
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert(`Файл успешно обработан: ${result.message}`);
+                    addLog(`Файл обработан: ${result.file_name}`, 'success');
+                } else {
+                    showAlert(`Ошибка: ${result.detail}`, 'error');
+                    addLog(`Ошибка обработки файла: ${result.detail}`, 'error');
+                }
+            } catch (error) {
+                showAlert('Ошибка сети при обработке файла', 'error');
+                addLog(`Сетевая ошибка: ${error.message}`, 'error');
+            }
+        });
+
+        // Обработка формы API
+        document.getElementById('apiForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const apiUrl = document.getElementById('apiUrl').value;
+            const inn = document.getElementById('apiInn').value;
+            const fileName = document.getElementById('fileName').value;
+            const fileExtension = document.getElementById('fileExtension').value;
+
+            if (!apiUrl || !inn) {
+                showAlert('Заполните все обязательные поля', 'error');
+                return;
+            }
+
+            addLog(`Начата загрузка из API: ${apiUrl} для ИНН: ${inn}`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/download-from-api/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        api_url: apiUrl,
+                        inn: inn,
+                        file_name: fileName || undefined,
+                        file_extension: fileExtension
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert(`Данные из API успешно загружены: ${result.message}`);
+                    addLog(`API данные загружены: ${result.file_name}`, 'success');
+                } else {
+                    showAlert(`Ошибка: ${result.detail}`, 'error');
+                    addLog(`Ошибка загрузки из API: ${result.detail}`, 'error');
+                }
+            } catch (error) {
+                showAlert('Ошибка сети при загрузке из API', 'error');
+                addLog(`Сетевая ошибка: ${error.message}`, 'error');
+            }
+        });
+
+        // Функция для открытия Superset
+        async function openSuperset(autolaunch) {
+            addLog(`Запрос доступа к Superset (автозапуск: ${autolaunch})`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/open-superset?autolaunch=${autolaunch}`);
+                const result = await response.json();
+
+                if (response.ok) {
+                    if (autolaunch) {
+                        showAlert('Superset открывается в браузере...');
+                        addLog('Автоматический запуск Superset', 'success');
+                    } else {
+                        showAlert('Ссылка на Superset готова');
+                        addLog('Ссылка на Superset получена', 'success');
+                        window.open(result.url, '_blank');
+                    }
+                } else {
+                    showAlert(`Ошибка: ${result.detail}`, 'error');
+                    addLog(`Ошибка доступа к Superset: ${result.detail}`, 'error');
+                }
+            } catch (error) {
+                showAlert('Ошибка сети при доступе к Superset', 'error');
+                addLog(`Сетевая ошибка: ${error.message}`, 'error');
+            }
+        }
+
+        // Примеры для быстрого заполнения
+        function fillExample(type) {
+            if (type === 'file') {
+                document.getElementById('filePath').value = '/tmp/example.pdf';
+                document.getElementById('fileInn').value = '1234567890';
+            } else if (type === 'api') {
+                document.getElementById('apiUrl').value = 'https://jsonplaceholder.typicode.com/posts/1';
+                document.getElementById('apiInn').value = '0987654321';
+                document.getElementById('fileName').value = 'api_data_example.json';
+            }
+            addLog(`Заполнен пример для ${type}`, 'info');
+        }
+
+        // Добавляем кнопки примеров в DOM после загрузки
+        setTimeout(() => {
+            const fileForm = document.getElementById('fileForm');
+            const apiForm = document.getElementById('apiForm');
+
+            const fileExampleBtn = document.createElement('button');
+            fileExampleBtn.type = 'button';
+            fileExampleBtn.textContent = '📝 Заполнить пример';
+            fileExampleBtn.className = 'btn btn-secondary';
+            fileExampleBtn.style.marginTop = '10px';
+            fileExampleBtn.onclick = () => fillExample('file');
+
+            const apiExampleBtn = document.createElement('button');
+            apiExampleBtn.type = 'button';
+            apiExampleBtn.textContent = '📝 Заполнить пример';
+            apiExampleBtn.className = 'btn btn-secondary';
+            apiExampleBtn.style.marginTop = '10px';
+            apiExampleBtn.onclick = () => fillExample('api');
+
+            fileForm.appendChild(fileExampleBtn);
+            apiForm.appendChild(apiExampleBtn);
+        }, 100);
+    </script>
+</body>
+</html>

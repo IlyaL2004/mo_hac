@@ -24,4 +24,9 @@ pgserver.public.file_metadata
 
 7. test_data/taxes_data.csv
 8. url = "https://jsonplaceholder.typicode.com/posts/1"
+9. заходим в папку frontend и пишем в терминале start frontend.html
+npx create-react-app frontend 
+10.  python -m http.server 8001
+11. http://localhost:8001/frontend.html
 
+ npx http-server -p 3000
