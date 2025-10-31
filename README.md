@@ -63,18 +63,21 @@ Self-service аналитика
 Бизнес-пользователи могут самостоятельно создавать дашборды без привлечения IT-специалистов
 
 Демонстрация системы
+<div align="center">
 
 Управление источниками
 
-[capture_20251101015809880.bmp](https://github.com/user-attachments/files/23277554/capture_20251101015809880.bmp)
+![Analytics Dashboard](https://github.com/user-attachments/files/23277495/capture_20251101015809880.bmp)
 
-[capture_20251101015822752.bmp](https://github.com/user-attachments/files/23277555/capture_20251101015822752.bmp)
+![Data Monitoring](https://github.com/user-attachments/files/23277497/capture_20251101015822752.bmp)
 
 Визуализация показателей
 
-[capture_20251101015843823.bmp](https://github.com/user-attachments/files/23277557/capture_20251101015843823.bmp)
+![Metrics Visualization](https://github.com/user-attachments/files/23277499/capture_20251101015843823.bmp)
 
-[capture_20251101015853338.bmp](https://github.com/user-attachments/files/23277559/capture_20251101015853338.bmp)
+![Data Sources](https://github.com/user-attachments/files/23277500/capture_20251101015853338.bmp)
+
+</div>
 
 Предварительные требования
 Docker и Docker Compose
@@ -83,20 +86,6 @@ Python 3.8+
 
 WSL (для Windows пользователей)
 
-<div align="center">
-
-![Analytics Dashboard](https://github.com/user-attachments/files/23277495/capture_20251101015809880.bmp)
-*Главный дашборд с ключевыми метриками*
-
-![Data Monitoring](https://github.com/user-attachments/files/23277497/capture_20251101015822752.bmp)
-*Мониторинг данных в реальном времени*
-
-![Metrics Visualization](https://github.com/user-attachments/files/23277499/capture_20251101015843823.bmp)
-*Визуализация промышленных показателей*
-
-![Data Sources](https://github.com/user-attachments/files/23277500/capture_20251101015853338.bmp)
-*Управление источниками данных*
-</div>
 
 
 1. pip install -r requirements.txt
