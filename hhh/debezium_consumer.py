@@ -10,15 +10,11 @@ from openpyxl import load_workbook
 import docx
 import PyPDF2
 import chardet
-
-# Импортируем необходимые библиотеки для ML модели
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
 import warnings
-
-# Добавляем импорт для ClickHouse
 import clickhouse_connect
 
 warnings.filterwarnings('ignore')
@@ -82,7 +78,7 @@ class SQLDataGenerator:
         ]
 
         # эмбеддинги для базовых показателей
-        print("🔄 Инициализация модели...")
+        print("Инициализация модели...")
         self.base_embeddings = self.model.encode(
             [self._normalize_text(col) for col in self.base_indicators],
             convert_to_tensor=True
