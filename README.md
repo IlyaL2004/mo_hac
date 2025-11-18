@@ -123,13 +123,13 @@ moscow-industry-data
 
 cd /mnt/c/Users/ilyal/Desktop/hac/mo_hac/hhh
 source venv/bin/activate
-python debezium_consumer.py
+python main_consumer.py
 
 # Терминал 2 - API сервер:
 
 cd /mnt/c/Users/ilyal/Desktop/hac/mo_hac/hhh
 source venv/bin/activate
-uvicorn kafka_connect_producer:app --reload --host 0.0.0.0 --port 8000
+python main_api.py
 
 # Запуск фронтенда
 bash
