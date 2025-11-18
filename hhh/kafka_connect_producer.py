@@ -24,6 +24,8 @@ import PyPDF2
 import chardet
 import tempfile
 import uuid
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 # Модели данных для API
@@ -709,6 +711,19 @@ app = FastAPI(
     description="API для обработки файлов и отправки в Kafka",
     version="1.0.0",
     lifespan=lifespan
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://192.168.3.17:3000",
+        "http://192.168.137.1:3000"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],  # Разрешаем все методы (GET, POST, OPTIONS и т.д.)
+    allow_headers=["*"],  # Разрешаем все заголовки
 )
 
 

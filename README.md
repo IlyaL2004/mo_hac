@@ -88,17 +88,70 @@ WSL (для Windows пользователей)
 
 
 
-1. pip install -r requirements.txt
-2. Открываем wsl, если windows
-2. docker-compose up -d
-3. Бакет создать
-переходим http://localhost:9001
-жмем на плюс в верхнем левом углу
-вводим название moscow-industry-data
-4. curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @chan-updated-connector.json
+# Запуск
 
-5. в другом терминале python debezium_consumer.py
-6. в другом терминале uvicorn kafka_connect_producer:app --reload --host 0.0.0.0 --port 8001
+# Установка python3-venv
+
+sudo apt update
+sudo apt install python3-venv -y
+
+# Создание виртуальной среды
+python3 -m venv venv
+
+# Активация виртуальной среды
+source venv/bin/activate
+
+# Установка зависимостей
+
+/mnt/c/Users/ilyal/Desktop/hac/mo_hac/hhh/venv/bin/python -m pip install -r requirements.txt
+
+# Запуск докера
+
+docker-compose up -d
+
+# Создание Kafka коннекторов
+curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @chan-updated-connector.json
+curl -X POST http://localhost:8084/connectors -H "Content-Type: application/json" -d @connector-config.json
+
+# Создаём бакет в S3
+
+создаём бакет в s3
+moscow-industry-data
+
+# Запуск Python сервисов
+# Терминал 1 - ML обработчик:
+
+cd /mnt/c/Users/ilyal/Desktop/hac/mo_hac/hhh
+source venv/bin/activate
+python debezium_consumer.py
+
+# Терминал 2 - API сервер:
+
+cd /mnt/c/Users/ilyal/Desktop/hac/mo_hac/hhh
+source venv/bin/activate
+uvicorn kafka_connect_producer:app --reload --host 0.0.0.0 --port 8000
+
+# Запуск фронтенда
+bash
+cd /mnt/c/Users/ilyal/Desktop/hac/mo_hac/frontend
+npx http-server -p 3000
+
+# Проверка работы
+Фронтенд: http://localhost:3000
+
+API документация: http://localhost:8000/docs
+
+MinIO: http://localhost:9001
+
+Kafka UI: http://localhost:8090
+
+Superset: http://localhost:8088
+
+
+# Eсли не загружается в s3, то перезагрузить коннектор
+
+curl -X DELETE http://localhost:8083/connectors/minio-file-chunks-sink
+curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @chan-updated-connector.json
 
 # Проверить топики
 ilya@DESKTOP-2T73313:/mnt/c/Users/ilyal/PycharmProjects/hacc/hhh$ docker exec -it kafka-broker1 /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9093 --list
@@ -112,11 +165,6 @@ connect-status
 file-chunks-topic
 pgserver.public.file_metadata
 
-7. test_data/taxes_data.csv
-8. url = "https://jsonplaceholder.typicode.com/posts/1"
-9. заходим в папку frontend и пишем в терминале start frontend.html
-npx create-react-app frontend 
-10.  python -m http.server 8001
-11. http://localhost:8001/frontend.html
+# В приложении можно загрузить файл
 
- npx http-server -p 3000
+test_data/taxes_data.csv
